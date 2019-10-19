@@ -1,4 +1,5 @@
 import time
+import json
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -26,16 +27,18 @@ if __name__ == '__main__':
         movie_name = str(item.find(class_="parent").text).rstrip('\r\n').lstrip().replace("\n", "").replace(" ", "")
         imdb_data[movie_name] = []
 
-    title_review = {}
     for item in soup.find_all(class_="review-container"):
-        review_title = item.find(class_="title").text
-        review = item.find(class_="text").text
-        # print("Title: {}\nReview: {}\n".format(review_title, review))
+        title_review = {}
+        review_title = item.find(class_="title").text.rstrip()
+        review = item.find(class_="text").text.rstrip().replace("\n", " ")
         title_review['title'] = review_title
         title_review['review'] = review
         imdb_data[movie_name].append(title_review)
 
-    print(imdb_data)
+    with open('movie_reviews.json', 'w') as f:
+        json.dump(imdb_data, f, indent=2)
+
+
 
 
 
