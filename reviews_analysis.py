@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 
 if __name__ == '__main__':
 
+    with open('movie_urls.txt', 'r') as f:
+        urls = f.readlines()
+
     url = urlopen('http://www.imdb.com/title/tt0111161/reviews?ref_=tt_ov_rt').read()
     soup = BeautifulSoup(url, "html.parser")
     for item in soup.find_all(class_="review-container"):
@@ -10,6 +13,6 @@ if __name__ == '__main__':
         review = item.find(class_="text").text
         try:
             rating = item.find(class_="point-scale").previous_sibling.text
-        except:
+        except Exception as e:
             rating = ""
         print("Title: {}\nReview: {}\nRating: {}\n".format(review_title, review, rating))
