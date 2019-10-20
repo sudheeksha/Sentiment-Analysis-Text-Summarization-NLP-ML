@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
-
 if __name__ == '__main__':
     browser = webdriver.Chrome(ChromeDriverManager().install())
     imdb_data = {}
@@ -35,8 +34,8 @@ if __name__ == '__main__':
         title_review['review'] = review
         imdb_data[movie_name].append(title_review)
 
-    with open('movie_reviews.json', 'w') as f:
-        json.dump(imdb_data, f, indent=2)
+    with open('movie_reviews.json', 'w', encoding="utf-8") as f:
+        json.dump(imdb_data, f, indent=2, ensure_ascii=False)
 
 
 
