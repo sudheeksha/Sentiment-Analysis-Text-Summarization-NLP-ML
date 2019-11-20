@@ -3,7 +3,7 @@ import random
 
 if __name__ == '__main__':
 
-    # sample size initialization
+    # sample size initialization for shuffling data
     X = 50
 
     # dictionary stores reviews for all movies
