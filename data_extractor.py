@@ -30,7 +30,7 @@ if __name__ == '__main__':
         movie_data_samples[movie_name] = list_of_reviews
 
         # storing the 50 reviews in a json file for each movie
-        with open(movie_name+'.json', 'w', encoding="utf-8") as f:
+        with open('MovieData/'+movie_name+'.json', 'w', encoding="utf-8") as f:
             json.dump(movie, f, indent=2, ensure_ascii=False)
 
         # storing reviews for all movies in one json file
