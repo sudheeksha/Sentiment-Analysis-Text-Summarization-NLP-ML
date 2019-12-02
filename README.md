@@ -13,6 +13,8 @@ wordcloud - pip3 install wordcloud \
 matplotlib - pip3 install matplotlib \
 pandas - pip3 install pandas \
 sklearn - pip3 install sklearn \
+textblob - pip3 install textblob \
+
 
 ## Required - Chrome Drivers:
 
