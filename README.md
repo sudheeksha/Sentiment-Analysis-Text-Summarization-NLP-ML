@@ -34,10 +34,10 @@ https://www.imdb.com/title/tt7131622/reviews?ref_=tt_ov_rt - Once Upon a time in
 - Selenium is a framework for testing web apps, in this project selenium is used to automate the process of retreiving all reviews for a specified movie.
 - movie_urls.txt contains links to the IMDb review page, if additional movies reviews are required the corresponding links can be added to the text file. This is processed by reviews_analysis.py
 - reviews_analysis.py contains only one function, upon running this script the following steps take place:
-          - Selenium starts a chrome browser and loads the specified URL.
-          - The loop continues to scroll through the webpage until "load-more" button is encountered.
-          - BeautifulSoup is then intialized which scrapes the data from the HTML page.
-          - These reviews are stored in a json file, the key represents movie name and the value contains a list of reviews.
+- Selenium starts a chrome browser and loads the specified URL.
+- The loop continues to scroll through the webpage until "load-more" button is encountered.
+- BeautifulSoup is then intialized which scrapes the data from the HTML page.
+- These reviews are stored in a json file, the key represents movie name and the value contains a list of reviews.
        
 
 ## Sentiment Analysis
