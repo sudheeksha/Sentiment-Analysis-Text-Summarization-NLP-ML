@@ -1,6 +1,6 @@
 # CognitiveComputingProject
 
-## Installation Required Libraries
+## Installation Required Libraries for Web Scraping
 
 - Libraries: \
 BeautifulSoup - pip3 install beautifulsoup4 \
@@ -25,6 +25,15 @@ https://www.imdb.com/title/tt7286456/reviews?ref_=tt_urv - Joker (2019)
 https://www.imdb.com/title/tt7131622/reviews?ref_=tt_ov_rt - Once Upon a time in Hollywood (2019)
 
 
+## Web Scraping
+
+- Chrome web driver is OS dependent.
+- Selenium is a framework for testing web apps, in this project selenium is used to automate the process of retreiving all reviews for a specified movie.
+- movie_urls.txt contains links to the IMDb review page, if additional movies reviews are required the corresponding links can be added to the text file. This is processed by reviews_analysis.py
+- reviews_analysis.py contains only one function, upon running this script the following steps take place
+          - 
+
+
 ## Sentiment Analysis
 
 
@@ -38,4 +47,7 @@ https://www.imdb.com/title/tt7131622/reviews?ref_=tt_ov_rt - Once Upon a time in
 
 #### Running the code
 
+- Required libraries are json, math, re, textwrap, nltk. 
+- movie.txt is a text file which contains review of one movie
 - 
+- In default mode, tf_idf_text_summary.py reads data from movie.txt 
