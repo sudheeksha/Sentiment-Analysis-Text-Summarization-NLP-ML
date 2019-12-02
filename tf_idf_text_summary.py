@@ -1,12 +1,18 @@
+import json
+import math
+import re
+import textwrap
+
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize, sent_tokenize
-import json
-import re
-import math
 
 # threshold value
+# threshold value is directly proportional to the length of the summary
 THRESHOLD_VALUE = 1.8
+
+# text wrapper to wrap lines and indentation to each line
+wrapper = textwrap.TextWrapper(initial_indent='\t', subsequent_indent='\t', width=100)
 
 
 def eliminate_url_emoji(string):
@@ -29,7 +35,6 @@ def eliminate_stopwords_stemming(text):
     :param text: a collection of reviews
     :return: a word frequency matrix
     """
-
     # initializing nltk defined set of stop words for english
     stop_words = set(stopwords.words("english"))
 
@@ -54,6 +59,7 @@ def eliminate_stopwords_stemming(text):
             else:
                 freq[word] = 1
         word_frequency[sentence[:15]] = freq
+
     return word_frequency
 
 
@@ -99,16 +105,21 @@ def summary_of_reviews(tf_idf_matrix, reviews, res_file):
     res_file.write("scores are:\n\n")
     # computing average scores
     sum_scores = sum(scores.values())
+    wrapped = wrapper.fill(str(sum_scores))
+    res_file.write(wrapped + '\n')
     average_score = sum_scores/len(scores)
+    wrapped = wrapper.fill(str(average_score))
+    res_file.write(wrapped + '\n')
 
     # generating a summary using a threshold value
-    #  based on testing, it was found that a higher threshold value generates a shorter summary
+    # based on testing, it was found that a higher threshold value generates a shorter summary
     res_file.write("generating summary for threshold value: \t" + str(THRESHOLD_VALUE) + "\n\n")
     for review in reviews:
         if review[:15] in scores and scores[review[:15]] >= THRESHOLD_VALUE * average_score:
             summary += " " + review
-    results_file.write("Summary generated is:\n\n")
-    res_file.write(summary)
+    res_file.write("Summary generated is:\n\n")
+    wrapped = wrapper.fill(summary)
+    res_file.write(wrapped + '\n')
     return summary
 
 
@@ -172,6 +183,3 @@ if __name__ == '__main__':
             summary_of_movie_reviews = summary_of_reviews(term_freq_inverse_doc_freq_matrix, sentences, results_file)
             print(summary_of_movie_reviews)
             break
-
-
-
