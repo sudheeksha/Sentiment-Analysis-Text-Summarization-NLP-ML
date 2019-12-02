@@ -1,7 +1,5 @@
 # CognitiveComputingProject
 
----
-
 ## Installation Required Libraries
 
 - Libraries: \
@@ -14,7 +12,7 @@ Web Driver Manager - pip3 install webdriver-manager
 https://chromedriver.chromium.org/downloads
           
 
-## Movies Review JSON file:
+## Movies Review URLs for Web Scraping:
 
 https://www.imdb.com/title/tt6398184/reviews?ref_=tt_urv - Downtown Abbey (2019)
 
@@ -32,3 +30,12 @@ https://www.imdb.com/title/tt7131622/reviews?ref_=tt_ov_rt - Once Upon a time in
 
 
 ## Text Summarization
+
+### TextRank Algorithm 
+
+
+### Term Frequency - Inverse Document Frequency
+
+#### Running the code
+
+- 
