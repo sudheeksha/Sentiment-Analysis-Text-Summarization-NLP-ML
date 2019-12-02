@@ -1,11 +1,18 @@
 # CognitiveComputingProject
 
-## Installation Required Libraries for Web Scraping
+## Installation Required
 
 - Libraries: \
 BeautifulSoup - pip3 install beautifulsoup4 \
 Selenium - pip3 install -U selenium \
-Web Driver Manager - pip3 install webdriver-manager 
+Web Driver Manager - pip3 install webdriver-manager \
+json - pip3 install json \
+textwrap3 - pip3 install textwrap3 \
+nltk - pip3 install nltk \
+wordcloud - pip3 install wordcloud \
+matplotlib - pip3 install matplotlib \
+pandas - pip3 install pandas \
+sklearn - pip3 install sklearn \
 
 ## Required - Chrome Drivers:
 
