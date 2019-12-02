@@ -5,9 +5,9 @@
 - Libraries: 
 All libraries with version are described in requirements.txt
 Usage:   
-  pip3 <command> [options]
+  ```pip3 <command> [options]```
 
-pip3 install -r requirements.txt
+```pip3 install -r requirements.txt```
 
 
 ## Required - Chrome Drivers:
