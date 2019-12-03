@@ -192,18 +192,18 @@ def text_summarization_using_tf_idf(all_text=None):
 
 
 if __name__ == '__main__':
-    read_from_file = False
+    # read_from_file = False
+    #
+    # if read_from_file:
+    #     # reads from json file
+    #     with open('movie_sampled_data.json', 'r') as f:
+    #         movie_file = json.load(f)
+    #     # for each movie perform text summarization on all the reviews
+    #     for movie_name in movie_file:
+    #         text = ""
+    #         for j in movie_file[movie_name]:
+    #             text += eliminate_url_emoji(j['review'])
+    #         text_summarization_using_tf_idf(text)
+    #         break
 
-    if read_from_file:
-        # reads from json file
-        with open('movie_sampled_data.json', 'r') as f:
-            movie_file = json.load(f)
-        # for each movie perform text summarization on all the reviews
-        for movie_name in movie_file:
-            text = ""
-            for j in movie_file[movie_name]:
-                text += eliminate_url_emoji(j['review'])
-            text_summarization_using_tf_idf(text)
-            break
-    else:
-        text_summarization_using_tf_idf()
+    text_summarization_using_tf_idf()
