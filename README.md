@@ -58,4 +58,11 @@ https://www.imdb.com/title/tt7131622/reviews?ref_=tt_ov_rt - Once Upon a time in
 #### Running the code
 
 - movie.txt is a text file which contains review of one movie
-- In default mode, tf_idf_text_summary.py reads data from movie.txt 
+- This file is required for tf_idf_text_summary.py to execute
+- The data from the text file is read and cleaned using the method '''def eliminate_url_emoji(string)'''
+- In the next step, a sent_tokenizer is used to convert a string into a list of tokens
+- A word frequency matrix is computed using '''eliminate_stopwords_stemming(sentences)'''
+- Followed by term frequency, inverse document frequency, and a tf-idf matrix.
+- Sentences are scored, average score is obtained and is multiplied by a threshold value to generate a summary of reviews.
+- The length of a summary is inversely proportional to the threshold value.
+- 
