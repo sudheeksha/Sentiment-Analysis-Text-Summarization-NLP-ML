@@ -2,18 +2,12 @@
 
 ## Installation Required
 
-- Libraries: \
-BeautifulSoup - pip3 install beautifulsoup4 \
-Selenium - pip3 install -U selenium \
-Web Driver Manager - pip3 install webdriver-manager \
-json - pip3 install json \
-textwrap3 - pip3 install textwrap3 \
-nltk - pip3 install nltk \
-wordcloud - pip3 install wordcloud \
-matplotlib - pip3 install matplotlib \
-pandas - pip3 install pandas \
-sklearn - pip3 install sklearn \
-textblob - pip3 install textblob \
+- Libraries: 
+All libraries with version are described in requirements.txt
+Usage:   
+  ```pip3 <command> [options]```
+
+```pip3 install -r requirements.txt```
 
 
 ## Required - Chrome Drivers:
@@ -39,9 +33,16 @@ https://www.imdb.com/title/tt7131622/reviews?ref_=tt_ov_rt - Once Upon a time in
 - Chrome web driver is OS dependent.
 - Selenium is a framework for testing web apps, in this project selenium is used to automate the process of retreiving all reviews for a specified movie.
 - movie_urls.txt contains links to the IMDb review page, if additional movies reviews are required the corresponding links can be added to the text file. This is processed by reviews_analysis.py
-- reviews_analysis.py contains only one function, upon running this script the following steps take place
-          - 
+- reviews_analysis.py contains only one function, upon running this script the following steps take place:
+- Selenium starts a chrome browser and loads the specified URL.
+- The loop continues to scroll through the webpage until "load-more" button is encountered.
+- BeautifulSoup is then intialized which scrapes the data from the HTML page.
+- These reviews are stored in a json file, the key represents movie name and the value contains a list of reviews.
 
+## Generating a word cloud
+- To generate a word cloud run the python script generating_word_cloud.py
+- It combines the reviews of all the movies and passes it as a parameter to the word cloud.
+- In this, words vary between font size and color 
 
 ## Sentiment Analysis
 
@@ -56,7 +57,5 @@ https://www.imdb.com/title/tt7131622/reviews?ref_=tt_ov_rt - Once Upon a time in
 
 #### Running the code
 
-- Required libraries are json, math, re, textwrap, nltk. 
 - movie.txt is a text file which contains review of one movie
-- 
 - In default mode, tf_idf_text_summary.py reads data from movie.txt 
