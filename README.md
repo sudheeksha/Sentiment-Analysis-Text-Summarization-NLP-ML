@@ -38,7 +38,11 @@ https://www.imdb.com/title/tt7131622/reviews?ref_=tt_ov_rt - Once Upon a time in
 - The loop continues to scroll through the webpage until "load-more" button is encountered.
 - BeautifulSoup is then intialized which scrapes the data from the HTML page.
 - These reviews are stored in a json file, the key represents movie name and the value contains a list of reviews.
-       
+
+## Generating a word cloud
+- To generate a word cloud run the python script generating_word_cloud.py
+- It combines the reviews of all the movies and passes it as a parameter to the word cloud.
+- In this, words vary between font size and color 
 
 ## Sentiment Analysis
 
@@ -54,5 +58,4 @@ https://www.imdb.com/title/tt7131622/reviews?ref_=tt_ov_rt - Once Upon a time in
 #### Running the code
 
 - movie.txt is a text file which contains review of one movie
-- 
 - In default mode, tf_idf_text_summary.py reads data from movie.txt 
