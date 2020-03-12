@@ -45,7 +45,14 @@ https://www.imdb.com/title/tt7131622/reviews?ref_=tt_ov_rt - Once Upon a time in
 - In this, words vary between font size and color 
 
 ## Sentiment Analysis
-
+1. Ensure all the libraries below are installed
+2. imbd_test.txt and imbd_train.txt are in the same directory as this python file.
+3. Enter the file name of movie data file at prompt.
+4. Ensure that movie data file is in same directory as this python file.
+5. When prompted enter  '1' for logistic regression
+                        '2' for svm
+                        '3' for naive bayes
+                        anything else for termination
 
 
 ## Text Summarization
